@@ -5,7 +5,7 @@ import TabButton from "./components/TabButton.jsx";
 import { useState } from "react";
 
 function App() {
-  const [selectedTopic, setSelectedTopic]=useState('Images');
+  const [selectedTopic, setSelectedTopic]=useState('');
   let tabContent = <p>Please, select a topic</p>;
 /*
   if(!selectedTopic){
@@ -50,19 +50,15 @@ function App() {
             <TabButton onSelect={()=>SelectHandle('C# code')}>C# code</TabButton>
             <TabButton onSelect={()=>SelectHandle('XAML code')}>XAML code</TabButton>
           </menu>
-          {!selectedTopic ?  (<p>Please, select a topic.</p>) : null}
-
-          {console.log(selectedTopic)}
-          {console.log(EXAMPLES[selectedTopic])}
-
-          {selectedTopic ?
-            (<div id="tab-content">
-              <h3>{EXAMPLES[selectedTopic].title}</h3>
-              <p>{EXAMPLES[selectedTopic].description}</p>
-              <pre>
-              <code>{EXAMPLES[selectedTopic].code}</code>
-              </pre>
-              </div>) : null }
+          {!selectedTopic &&  (<p>Please, select a topic.</p>)}
+          {selectedTopic &&
+            ( <div id="tab-content">
+                <h3>{EXAMPLES[selectedTopic].title}</h3>
+                <p>{EXAMPLES[selectedTopic].description}</p>
+                <pre>
+                  <code>{EXAMPLES[selectedTopic].code}</code>
+                </pre>
+              </div>) }
         </section>
       </main>
     </div>
