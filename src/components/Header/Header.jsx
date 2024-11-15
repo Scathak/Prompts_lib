@@ -14,7 +14,7 @@ export default function Header(){
     <img src={imageRef} alt="Header" />
     <h1>Prompts library</h1>
     <p>
-        A collection of prompts that have been tested in LLM and have yielded good results.
+      A collection of prompts that have been tested in LLM and have yielded good results.
     </p>
   </header>)
 }
