@@ -9,7 +9,6 @@ function App() {
 
   function SelectHandle(SelectedButton){
     setSelectedTopic(SelectedButton);
-    console.log(selectedTopic);
   }
 
   let tabContent = <p>Please, select a topic</p>;
@@ -41,11 +40,12 @@ function App() {
         <section id="examples"> 
           <h2>Examples</h2>
           <menu>
-            <TabButton onSelect={()=>SelectHandle('Images')}>Images</TabButton>
-            <TabButton onSelect={()=>SelectHandle('Poetry')}>Poetry</TabButton>
-            <TabButton onSelect={()=>SelectHandle('C# code')}>C# code</TabButton>
-            <TabButton onSelect={()=>SelectHandle('XAML code')}>XAML code</TabButton>
+            <TabButton isSelected = {selectedTopic === 'Images'} onSelect={()=>SelectHandle('Images')}>Images</TabButton>
+            <TabButton isSelected = {selectedTopic === 'Poetry'} onSelect={()=>SelectHandle('Poetry')}>Poetry</TabButton>
+            <TabButton isSelected = {selectedTopic === 'C# code'} onSelect={()=>SelectHandle('C# code')}>C# code</TabButton>
+            <TabButton isSelected = {selectedTopic === 'XAML code'} onSelect={()=>SelectHandle('XAML code')}>XAML code</TabButton>
           </menu>
+          {console.log(selectedTopic)}
           {tabContent}
         </section>
       </main>
