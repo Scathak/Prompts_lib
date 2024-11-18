@@ -31,10 +31,9 @@ function App() {
         <section id="core-concepts">
           <h2>Prompt groups</h2>
           <ul>
-            <PromptGroups {... PROMPT_GROUPS[0]} />
-            <PromptGroups {... PROMPT_GROUPS[1]} />
-            <PromptGroups {... PROMPT_GROUPS[2]} />
-            <PromptGroups {... PROMPT_GROUPS[3]} />
+            {PROMPT_GROUPS.map((groupItem) =>(
+              <PromptGroups key={groupItem.title} {...groupItem} />
+              ))}
           </ul>
         </section>
         <section id="examples"> 
